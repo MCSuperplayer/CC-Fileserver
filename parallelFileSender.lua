@@ -7,7 +7,7 @@ local line
 while running do
     sender, msg = rednet.receive(vpn)
     if not sender == id then
-        rednet.send(sender,"You should not be on this channel, please reconnect.")
+        rednet.send(sender,"You should not be on this channel, please reconnect.",vpn)
         rednet.send(id,"#INTERRUPT",vpn)
         break
     end
